@@ -29,19 +29,46 @@ namespace IT481_Unit_4_Assignment
         }
 
         //Given an array of integers, print out each value.
-        public void Example_Two(int[] arr)
+        public bool Example_Two(int[] arr)
         {
-            for (int i = 0; i < arr.Length; i++)
+            bool isComplete = false;
+
+            if (arr[0] != 0)
             {
-                Console.WriteLine(arr[i]);
+                for (int i = 0; i < arr.Length; i++)
+                {
+                    Console.WriteLine(arr[i]);
+                }
+                isComplete = true;
             }
+
+            return isComplete;
         }
 
         //Given two integers, search values if they are equal to the values in the array.
-//        public bool Example_Three(int[] arr)
-//        {
+        public bool Example_Three(int[] arr)
+        {
+            int a = 81;
+            int b = 15;
+            bool isFound = false;
 
-//        }
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (a == arr[i])
+                {
+                    Console.WriteLine("The value, " + a.ToString() + ", was found in the array.");
+                    isFound = true;
+                } else if (b == arr[i])
+                {
+                    Console.WriteLine("The value, " + b.ToString() + ", was found in the array.");
+                    isFound = true;
+                }
+            }
+            if (!isFound)
+                Console.WriteLine("Neither of the search values were found");
+
+            return isFound;
+        }
         #endregion
     }
 }
